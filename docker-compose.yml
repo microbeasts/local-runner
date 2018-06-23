@@ -1,0 +1,19 @@
+version: '3'
+services:
+    dind:
+        build: .
+        privileged: true
+        command: bash -c "composer install && cron -f"
+        volumes:
+            - ../:/project
+            - /var/run/docker.sock:/var/run/docker.sock
+
+    reversproxy:
+        image: jwilder/nginx-proxy
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+        network_mode: host
+
+    dbgpproxy:
+        image: christianbladescb/dbgpproxy
+        network_mode: host

@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+<?php
+
+// Расположение проекта в коде
+include './vendor/codeception/codeception/codecept';
