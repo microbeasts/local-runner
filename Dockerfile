@@ -28,6 +28,8 @@ RUN apt-get update && apt-get install -y php7.2 \
 
 # DOCKER
 RUN cd /usr/local/src && wget -qO- https://get.docker.com/ | sh
+RUN curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
 # PROJECT
 WORKDIR /project/local-runner
