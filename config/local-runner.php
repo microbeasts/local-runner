@@ -19,13 +19,15 @@ return [
         'example' => [
             'type'         => 'projects',
             'repositories' => [
-                'git' => [
-                    'test-for-local-runner'   => 'https://github.com/microbeasts/test-for-local-runner.git',
-                    'test-for-local-runner-2' => 'https://github.com/microbeasts/test-for-local-runner.git',
-                    'https://github.com/teqneers/PHP-Stream-Wrapper-for-Git.git',
+                'test-for-local-runner.loc'   => [
+                    'type'     => 'git',
+                    'path'     => 'https://github.com/microbeasts/test-for-local-runner.git',
+                ],
+                'test-for-local-runner-2.loc' => [
+                    'type'    => 'git',
+                    'path'    => 'https://github.com/microbeasts/test-for-local-runner.git',
                 ],
             ],
-            'domain_zone'  => 'loc',
             'version'      => '3.5',
             'services'     => [
                 'nginx' => [
